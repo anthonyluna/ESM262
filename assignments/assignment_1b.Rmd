@@ -1,0 +1,40 @@
+---
+title: "Assignment 1b"
+author: "Anthony Luna, Cameryn Brock, and Allison Bailey"
+date: "2/10/2021"
+output: html_document
+---
+
+### Goal: 
+
+ - Quantify revenue from diverting food waste streams to generate renewable energy and compost.  
+
+### Inputs: 
+
+ - Number of employees measured in full time equivalents FTE
+
+### Parameters: 
+
+ - Tons of organic waste per fte per month, 
+ - Timeframe in months, 
+ - Number of hauls per ton organic waste, 
+ - Compost generated per ton organic waste, 
+ - MMBtu natural gas produced per ton organic waste,
+ - Price per haul,
+ - Price per ton compost,
+ - Price per MMBtu
+
+### Outputs: 
+
+ - Monthly total revenue
+	
+### Modules:
+
+ - `calc_tons`: Calculate total tonnage from a given FTE input
+ - `calc_hauls`: Calculate total number of hauls
+ - `calc_compost`: Calculate production volume (compost)
+ - `calc_biogas`: Calculate production volume (biogas)
+ - `revenue_hauls`: Calculate monthly revenue (hauling)
+ - `revenue_biogas`: Calculate monthly revenue (biogas)
+ - `revenue_compost`: Calculate monthly revenue (compost)
+ - `summarize_revenue`: Summarize monthly revenue
