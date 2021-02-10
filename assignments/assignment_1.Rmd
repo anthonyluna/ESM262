@@ -5,9 +5,11 @@ date: "2/9/2021"
 output: html_document
 ---
 
+### Whats my programming background?
+
+I am mostly a self taught programmer with experience working with a variety of programming languages. I was a math major during undergrad, where we used mostly Maple for computation and LaTeX for documents. After college I built a program in python for my family grocery store that extracted raw transaction codes from the registers and created into a usable SQLite database. Then I worked as an analyst for a health care consulting firm helping them build out their insurance claims QA and analysis platform. Most of the larger computation processes was in T-SQL and the production databases were created using SAS. Most recently I have been working with crop advisers at the UC Agriculture and Natural resources division to help build remote weather and irrigation monitoring, basic spectral image analysis to measure canopy cover and disease severity, and build simple tools to allow farmers to estimate their crop irrigation needs. I use a combination of R and other open source tools for this work.
 
 ### Why am I taking ESM 262?
 
-I am taking 
+I am taking this course because I would like to learn more practical tools relating to programming from people who have successfully built large programs. Having been mostly self taught, there are some key skills I have yet to develop. These include automating testing and automated annotation, both of which would be great tools for day to day programming.
 
-### Whats my programming background?
