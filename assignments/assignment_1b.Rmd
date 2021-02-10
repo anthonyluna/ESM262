@@ -38,6 +38,6 @@ output: html_document
  - `revenue_biogas`: Calculate monthly revenue (biogas)
  - `revenue_compost`: Calculate monthly revenue (compost)
  - `summarize_revenue`: Summarize monthly revenue
- 
- ### Flow Diagram:
+
+### Flow Diagram:
   - https://lucid.app/lucidchart/01dfa95c-ebc2-4d94-b1dd-4c81b0c22d89/edit?page=0_0#?folder_id=home&browser=icon
