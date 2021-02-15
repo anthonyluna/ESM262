@@ -29,18 +29,19 @@ output: html_document
 	
 ### Modules:
 
+
  - `calc_hauled`: Calculate total tonnage from a given FTE input per month
-    - input:
-    - parameter:
-    - output
+    - input: Number of employees measured in FTE
+    - parameter: Tons of organic waste per FTE per month
+    - output: Tons of organic waste per month
  - `calc_compost`: Calculate average production monthly volume (compost)
-    - input:
-    - parameter:
-    - output
+    - input: Tons of organic waste per month
+    - parameter: compost generated per ton organic waste
+    - output: Tons of compost per monnth
  - `calc_biogas`: Calculate average production monthly volume (biogas)
-    - input:
-    - parameter:
-    - output
+    - input: Tons of organic waste per month
+    - parameter: MMBtu natural gas produced per ton organic waste
+    - output: MMbtu of natural gas per month
  - `revenue_hauled`: Calculate average monthly revenue (hauling)
     - input: Total food waste tonnage from a given FTE input per month (calc_hauled)
     - parameter: Charge of haul per ton of food waste * Total food waste tonnage from a given FTE input per month (calc_hauled)
