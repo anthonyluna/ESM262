@@ -54,8 +54,10 @@ output: html_document
     - output: Total revenue of average production monthly volume of compost
  - `sum_revenue`: Summarize average monthly revenue
     - inputs: Total revenue of food waste hauling from a given FTE per month, total revenue of average production monthly volume of biogas, total revenue of average production monthly volume of compost
-    - parameter:
-    - output
+    - output: Sum of all average monthly revenues
 
 ### Flow Diagram:
+
+![](assignment_1b_flowchart.png)
+
   - https://lucid.app/lucidchart/01dfa95c-ebc2-4d94-b1dd-4c81b0c22d89/edit?page=0_0#?folder_id=home&browser=icon
