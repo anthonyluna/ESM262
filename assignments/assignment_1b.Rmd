@@ -30,29 +30,29 @@ output: html_document
 ### Modules:
 
  - `calc_hauled`: Calculate total tonnage from a given FTE input per month
-    - input: Number of employees measured in FTE
-    - parameter: Tons of organic waste per FTE per month
-    - output: Tons of organic waste per month
+    - input:
+    - parameter:
+    - output
  - `calc_compost`: Calculate average production monthly volume (compost)
-    - input: Tons of organic waste per month
-    - parameter: compost generated per ton organic waste
-    - output: Tons of compost per monnth
+    - input:
+    - parameter:
+    - output
  - `calc_biogas`: Calculate average production monthly volume (biogas)
-    - input: Tons of organic waste per month
-    - parameter: MMBtu natural gas produced per ton organic waste
-    - output: MMbtu of natural gas per month
+    - input:
+    - parameter:
+    - output
  - `revenue_hauled`: Calculate average monthly revenue (hauling)
-    - input:
-    - parameter:
-    - output
+    - input: Total food waste tonnage from a given FTE input per month (calc_hauled)
+    - parameter: Charge of haul per ton of food waste * Total food waste tonnage from a given FTE input per month (calc_hauled)
+    - output: Total revenue of food waste hauling from a given FTE per month
  - `revenue_biogas`: Calculate average monthly revenue (biogas)
-    - input:
-    - parameter:
-    - output
+    - input: Average production monthly volume of biogas (calc_biogas)
+    - parameter: Average production monthly volume of biogas in MMBTUs (calc_biogas) * 293.07107 kWh * Charge per kWh
+    - outpu: Total revenue of average production monthly volume of biogas
  - `revenue_compost`: Calculate average monthly revenue (compost)
-    - input:
-    - parameter:
-    - output
+    - input: Average production monthly volume (compost)
+    - parameter: Charge per ton of compost * Average production monthly volume (ton) of compost
+    - output: Total revenue of average production monthly volume of compost
  - `summarize_revenue`: Summarize average monthly revenue
     - input:
     - parameter:
