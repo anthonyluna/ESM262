@@ -12,32 +12,51 @@ output: html_document
 ### Inputs: 
 
  - Number of employees measured in full time equivalents FTE
-
+ 
 ### Parameters: 
 
+ - Number of months for accounting,
  - Tons of organic waste per fte per month, 
- - Timeframe in months, 
- - Number of hauls per ton organic waste, 
  - Compost generated per ton organic waste, 
  - MMBtu natural gas produced per ton organic waste,
- - Price per haul,
+ - Price per ton hauled,
  - Price per ton compost,
  - Price per MMBtu
 
 ### Outputs: 
 
- - Monthly total revenue
+ - Average Monthly Revenue
 	
 ### Modules:
 
- - `calc_tons`: Calculate total tonnage from a given FTE input
- - `calc_hauls`: Calculate total number of hauls
- - `calc_compost`: Calculate production volume (compost)
- - `calc_biogas`: Calculate production volume (biogas)
- - `revenue_hauls`: Calculate monthly revenue (hauling)
- - `revenue_biogas`: Calculate monthly revenue (biogas)
- - `revenue_compost`: Calculate monthly revenue (compost)
- - `summarize_revenue`: Summarize monthly revenue
+ - `calc_hauled`: Calculate total tonnage from a given FTE input per month
+    - input:
+    - parameter:
+    - output
+ - `calc_compost`: Calculate average production monthly volume (compost)
+    - input:
+    - parameter:
+    - output
+ - `calc_biogas`: Calculate average production monthly volume (biogas)
+    - input:
+    - parameter:
+    - output
+ - `revenue_hauled`: Calculate average monthly revenue (hauling)
+    - input:
+    - parameter:
+    - output
+ - `revenue_biogas`: Calculate average monthly revenue (biogas)
+    - input:
+    - parameter:
+    - output
+ - `revenue_compost`: Calculate average monthly revenue (compost)
+    - input:
+    - parameter:
+    - output
+ - `summarize_revenue`: Summarize average monthly revenue
+    - input:
+    - parameter:
+    - output
 
 ### Flow Diagram:
   - https://lucid.app/lucidchart/01dfa95c-ebc2-4d94-b1dd-4c81b0c22d89/edit?page=0_0#?folder_id=home&browser=icon
