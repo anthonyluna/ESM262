@@ -1,0 +1,95 @@
+---
+title: "Assignment 2a: Automobile Power Generation"
+author: "Claudia Flores, Anthony Luna, Gabriel De La Rosa, Mariano Viz"
+date: "2/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+# Insert packages
+library(here) # for source function to find function in directory
+library(tidyverse) # for ggplot and tibble
+```
+
+
+
+```{r}
+## Parameters to make power generation function
+##
+# g = gravity (m/s^2)
+# p_air = density of air (kg/m^3)
+# crolling = rolling drag coefficient
+# cdrag = aerodynamic drag coefficient
+##
+## Inputs to make a power generation function
+##
+# m = car mass (kg)
+# V = car speed (m/s)
+# A = surface area (m^2)
+
+## Function
+power_gen <- function(m, V, A, g = 9.8, p_air = 1.2, crolling = 0.015, cdrag = 0.3){
+  # Body 
+  Pb <- crolling * m * g * V + 0.5 * A * p_air * cdrag * V^3
+  # Output is the power output
+  return(Pb)
+}
+
+## Source the function and label it "power_gen.R"
+source(here("R", "power_gen.R"))
+```
+
+
+
+```{r}
+## Run the function for different car sizes and speeds 
+# speeds to use are 30 m/s, 80 km/hr, 120 km/hr, and 40 km/hr
+# speeds need need to be converted to m/s, except 30
+# big car mass is 31752 kg
+# small car mass is 75% of the big car mass (31752 kg)
+# surface area of car is 9 meters^2
+
+## Conversion from km/hr to m/s
+# Conversion from km/hr to m/s is to divide by 3.6
+
+speed_1 <- 30 # speed_1 was not converted because it was given in m/s
+speed_2 <- 80/3.6
+speed_3 <- 120/3.6
+speed_4 <- 40/3.6
+
+## Function for big and small cars
+big_car <- power_gen(V = c(speed_1, speed_2, speed_3, speed_4), m = 31752, A = 9) 
+small_car <- power_gen(V = c(speed_1, speed_2, speed_3, speed_4), m = 31752*0.75, A = 9)
+```
+
+```{r}
+## Create a data frame and graph for results from function
+
+# Create a data frame for the different speeds and car sizes calculated
+df <- tibble(speed = c(speed_1, speed_2, speed_3, speed_4), big_car = big_car, small_car = small_car)
+
+# Graph the data frame created for the different speeds and car sizes calculated
+ggplot(df) + # Insert data frame to create a ggplot
+  geom_line(aes(x = speed, 
+                y = big_car),
+                color = "green") + # Create a line to plot speeds for big cars
+  geom_line(aes(x = speed, 
+                y = small_car), 
+                color = "cyan") + # Create a line to plot speeds for small cars
+  geom_label(label = "Big Car", 
+             x = 25, 
+             y = 163000, 
+             color = "green") + # Create a label for small car
+  geom_label(label = "Small Car", 
+             x = 30, 
+             y = 130000, 
+             color = "cyan") + # Create a label for big car
+  theme_bw() + # theme is black and white
+  labs(title = "Power generation at different highway speeds", 
+       x = "Speed (m/s)",
+       y = "Power (watts)") # labels for title and x and y axis
+  
+```
