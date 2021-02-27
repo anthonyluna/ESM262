@@ -41,7 +41,7 @@ ricker_outcome(w_1,species_x_name = "Giraffe",species_y_name = "Elephant")
 w_2 <- ricker(A0=10,
             J0=10,
             u=.2,
-            y0=10,
+            y0=20,
             a=5,
             b=5,
             c11=0.1,
@@ -56,6 +56,11 @@ ricker_outcome(w_2,species_x_name = "Giraffe",species_y_name = "Elephant")
 ```
 
 
+
+
+
+
+
 ```{r}
 w_3 <- ricker(A0=10,
             J0=10,
@@ -63,8 +68,8 @@ w_3 <- ricker(A0=10,
             y0=20,
             a=5,
             b=5,
-            c11=0.1,
-            c22=0.1,
+            c11=2.1,
+            c22=3.1,
             c12=0.11,
             c21=0.12)
 
@@ -87,11 +92,11 @@ ricker_outcome(w_3,species_x_name = "Giraffe",species_y_name = "Elephant")
 w_4 <- ricker(A0=10,
             J0=10,
             u=.2,
-            y0=20,
+            y0=10,
             a=5,
             b=5,
-            c11=2.1,
-            c22=3.1,
+            c11=0.1,
+            c22=0.1,
             c12=0.11,
             c21=0.12)
 ```

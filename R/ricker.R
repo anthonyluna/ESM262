@@ -12,7 +12,8 @@
 # Inputs: The initial count of juveniles and adults of species x and species y.
 #
 # Parameters: Juvenile death rate (u), competition coefficients (c11, c12, c21,
-# c22), and reproductive rate 
+
+# c22), and outputs
 #
 # Output: Population of species x and species y at timestep i
 #
