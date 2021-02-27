@@ -7,40 +7,15 @@ output: html_document
 
 ```{r setup, include=FALSE}
 library(tidyverse)
-library(ggpubr)
 library(here)
 knitr::opts_chunk$set(echo = TRUE)
 source(here("R","ricker.R"))
 source(here("R","ricker_outcome.R"))
 ```
-
-
-*Remember to use good programming practices; documentation, error-checking, understandable variable names
-AND go through DataTypes.RMD
-```{r}
-w <- ricker(A0=5,
-            J0=5,
-            u=.2,
-            y0=20,
-            a=5,
-            b=5,
-            c11=0.1,
-            c22=0.1,
-            c12=0.11,
-            c21=0.12)
-
-```
+# Example usage of the `ricker` and `ricker_outcome` functions
 
 ```{r}
-
-ricker_outcome(w)
-
-
-```
-
-
-```{r}
-w <- ricker(A0=5,
+w_1 <- ricker(A0=5,
             J0=5,
             u=.2,
             y0=10,
@@ -53,16 +28,17 @@ w <- ricker(A0=5,
 
 ```
 
+```
+ricker_outcome(w,species_x_name = "Giraffe",species_y_name = 2)
+# Not Run
+Error in ricker_outcome(w, species_x_name = "giraffe", species_y_name = 2) : Assertion on 'species_y_name' failed: Must be of type 'string', not 'double'.
+```
 ```{r}
-
-ricker_outcome(w)
-
-
+ricker_outcome(w_1,species_x_name = "Giraffe",species_y_name = "Elephant")
 ```
 
-
 ```{r}
-w <- ricker(A0=10,
+w_2 <- ricker(A0=10,
             J0=10,
             u=.2,
             y0=10,
@@ -76,8 +52,50 @@ w <- ricker(A0=10,
 ```
 
 ```{r}
+ricker_outcome(w_2,species_x_name = "Giraffe",species_y_name = "Elephant")
+```
 
-ricker_outcome(w)
+
+```{r}
+w_3 <- ricker(A0=10,
+            J0=10,
+            u=.2,
+            y0=20,
+            a=5,
+            b=5,
+            c11=0.1,
+            c22=0.1,
+            c12=0.11,
+            c21=0.12)
+
+```
+
+```{r}
+
+ricker_outcome(w_3,species_x_name = "Giraffe",species_y_name = "Elephant")
 
 
+```
+
+
+
+
+
+
+
+```{r}
+w_4 <- ricker(A0=10,
+            J0=10,
+            u=.2,
+            y0=20,
+            a=5,
+            b=5,
+            c11=2.1,
+            c22=3.1,
+            c12=0.11,
+            c21=0.12)
+```
+
+```{r}
+ricker_outcome(w_4,species_x_name = "Giraffe",species_y_name = "Elephant")
 ```
