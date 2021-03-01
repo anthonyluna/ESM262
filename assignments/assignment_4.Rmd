@@ -1,0 +1,29 @@
+---
+title: "Assignment 4"
+author: "Anthony Luna"
+date: "3/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+```
+```{r}
+source(here("R","fish_summary.R"))
+```
+```{r}
+fish_data_df <- read_delim(file = here("assignments","fish.txt"),delim = ",")
+
+
+fish_data <- as.vector(fish_data_df$x)
+
+fish_summary(fish_data,histogram = TRUE)
+```
+```{r}
+
+
+fish_summary(fish_data)
+```
+
