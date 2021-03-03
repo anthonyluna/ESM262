@@ -1,6 +1,6 @@
 ---
 title: "Assignment 4"
-author: "Anthony Luna"
+author: "Anthony Luna, Becca Reynolds, Alex Ehrens"
 date: "3/1/2021"
 output: html_document
 ---
@@ -13,17 +13,24 @@ library(here)
 ```{r}
 source(here("R","fish_summary.R"))
 ```
+There are a couple ways to read in this text file. We used `read_delim`.
+
 ```{r}
 fish_data_df <- read_delim(file = here("assignments","fish.txt"),delim = ",")
 
-
+# function requires an atomic vector input
 fish_data <- as.vector(fish_data_df$x)
-
-fish_summary(fish_data,histogram = TRUE)
 ```
+
+Run with the fishtogram!
+
 ```{r}
+fish_summary(fish_data, fishtogram = TRUE)
+```
 
+Default run without the fishtogram returned.
 
+```{r}
 fish_summary(fish_data)
 ```
 
